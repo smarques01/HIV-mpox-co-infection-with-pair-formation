@@ -13,7 +13,7 @@ dh = 1/(13*365);
 dc = 1/(11*365);
 taum = 0.745;
 tauh = 0.0021;
-phi = 1.2; %1; increased risk for HIV-infectious ppl
+phi = 1; %1.2; increased risk for HIV-infectious ppl
 delm = 1/27;
 delc = 1/32;
 psi = 1/3;
@@ -301,5 +301,6 @@ annotation("textbox",'interpreter','latex','string', '$1 < \mathcal{R}_0^m < \ma
 annotation("textbox",'interpreter','latex','string', '$ \mathcal{R}_0^m < \mathcal{R}_i^{mh} < 1$', 'LineStyle','none')
 annotation("textbox",'interpreter','latex','string', '$\mathcal{R}_0^h < 1$', 'LineStyle','none')
 fontsize(12,"points")
+
 
 
