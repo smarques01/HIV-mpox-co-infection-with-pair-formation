@@ -10,7 +10,7 @@ mu = 1/18250;
 d_m = 1/17520;
 d_h = 1/4745;
 d_c = 1/4015;
-tau_m = 0.785;
+tau_m = 0.745;
 tau_h = 0.0021;
 phi = 1; % increased risk for HIV-infectious ppl
 del_m = 1/27;
@@ -283,5 +283,6 @@ ylabel('HIV Infecteds (all)')
 legend(legendStr)
 fontsize(14, 'points')
 % xlim([0 50])
+
 
 
