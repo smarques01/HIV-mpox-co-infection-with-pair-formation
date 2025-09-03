@@ -82,50 +82,54 @@ end
 
 %%
 figure(1)
-contourf(S, R, R0, 'ShowText', 'on', 'linewidth',1.25)
+[M, c] = contourf(S, R, R0, 'ShowText', 'on', 'linewidth',1.25);
 %title('$\mathcal{R}_0$', 'Interpreter', 'latex')
 ylabel('$\rho$', 'Interpreter', 'latex')
 xlabel('$\sigma$', 'Interpreter', 'latex')
 fontsize(12,"points")
 hold on
 contour(S,R,R0,[1 1],'linewidth',1.25,'color','red')
+clabel(M, c, 'FontSize', 12, 'FontWeight','bold', 'labelspacing', 1000);
 
 range = 0:0.1:1.6; 
 contourcmap('parula', range);
 
 figure(2)
-contourf(S, R, R0m, 'ShowText', 'on', 'linewidth',1.25)
+[M, c] = contourf(S, R, R0m, 'ShowText', 'on', 'linewidth',1.25);
 %title('$\mathcal{R}_0^m$', 'Interpreter', 'latex')
 ylabel('$\rho$', 'Interpreter', 'latex')
 xlabel('$\sigma$', 'Interpreter', 'latex')
 fontsize(12,"points")
 hold on
 contour(S,R,R0m,[1 1],'linewidth',1.25,'color','red')
+clabel(M, c, 'FontSize', 12, 'FontWeight','bold', 'labelspacing', 1000);
 
 range = 0:0.1:1.6; 
 contourcmap('parula', range);
 
 figure(3)
-contourf(S, R, R0h, 'ShowText', 'on', 'linewidth',1.25)
+[M, c] = contourf(S, R, R0h, 'ShowText', 'on', 'linewidth',1.25);
 %title('$\mathcal{R}_0^h$', 'Interpreter', 'latex')
 ylabel('$\rho$', 'Interpreter', 'latex')
 xlabel('$\sigma$', 'Interpreter', 'latex')
 fontsize(12,"points")
 hold on
 contour(S,R,R0h,[1 1],'linewidth',1.25,'color','red')
+clabel(M, c, 'FontSize', 12, 'FontWeight','bold', 'labelspacing', 1000);
 
 range = 0:0.1:1.6; 
 contourcmap('parula', range);
 
 
 figure(4)
-contourf(S, R, R0c, 'ShowText', 'on', 'linewidth',1.25)
+[M, c] = contourf(S, R, R0c, 'ShowText', 'on', 'linewidth',1.25);
 %title('$\lambda^*$', 'Interpreter', 'latex')
 ylabel('$\rho$', 'Interpreter', 'latex')
 xlabel('$\sigma$', 'Interpreter', 'latex')
 fontsize(12,"points")
 hold on
 contour(S,R,R0c,[1 1],'linewidth',1.25,'color','red')
+clabel(M, c, 'FontSize', 12, 'FontWeight','bold', 'labelspacing', 1000);
 
 range = 0:0.1:1.6; 
 contourcmap('parula', range);
@@ -224,13 +228,14 @@ R0mh_new = mat .* R0mh;
 R0mh_new(R0mh_new==0) = NaN;
 %%
 figure(5)
-contourf(S, R, R0mh_new, 'ShowText', 'on', 'LineWidth',1.25)
+[M, c] = contourf(S, R, R0mh_new, 'ShowText', 'on', 'LineWidth',1.25);
 hold on
 contour(S,R,R0mh_new,[1 1],'linewidth',1,'color','red')
 %title('$\mathcal{R}_i^{mh}$', 'Interpreter', 'latex')
 ylabel('$\rho$', 'Interpreter', 'latex')
 xlabel('$\sigma$', 'Interpreter', 'latex')
 fontsize(12,"points")
+clabel(M, c, 'FontSize', 12, 'FontWeight','bold', 'labelspacing', 1000);
 
 range = 0:0.2:1.6; 
 contourcmap('parula', range);
@@ -238,13 +243,14 @@ contourcmap('parula', range);
 %%
 figure(6)
 new_mat = R0m ./ R0mh_new;
-contourf(S, R, new_mat, 'ShowText', 'on', 'LineWidth',1.25)
+[M, c] = contourf(S, R, new_mat, 'ShowText', 'on', 'LineWidth',1.25);
 hold on
 contour(S,R,new_mat,[1 1],'linewidth',1,'color','red')
 %title('$\mathcal{R}_0^m / \mathcal{R}_i^{mh}$', 'Interpreter', 'latex')
 ylabel('$\rho$', 'Interpreter', 'latex')
 xlabel('$\sigma$', 'Interpreter', 'latex')
 fontsize(12,"points")
+clabel(M, c, 'FontSize', 12, 'FontWeight','bold', 'labelspacing', 1000);
 
 annotation("textbox",'interpreter','latex','string', '$ 0.9 < \mathcal{R}_0^m / \mathcal{R}_i^{mh} < 1 $', 'LineStyle','none')
 xlim([1/(3*365) 0.05])
@@ -271,7 +277,7 @@ hold on
 % patch([c3(1, 432:end), fliplr(c3(1, 432:end))], [c3(2, 432:end), 0.34*ones(1, length(c3(2, 432:end)))], 'c', 'EdgeColor', 'none')
 % alpha(0.3)
 % hold on
-rectangle('Position',[0.209738,0.129544,0.14,0.28],'FaceColor','cyan','EdgeColor','none');
+rectangle('Position',[0.218147,0.134626,0.14,0.28],'FaceColor','cyan','EdgeColor','none');
 hold on
 
 [c2] = contour(S, R, R0m, [1 1]);
@@ -295,4 +301,5 @@ annotation("textbox",'interpreter','latex','string', '$1 < \mathcal{R}_0^m < \ma
 annotation("textbox",'interpreter','latex','string', '$ \mathcal{R}_0^m < \mathcal{R}_i^{mh} < 1$', 'LineStyle','none')
 annotation("textbox",'interpreter','latex','string', '$\mathcal{R}_0^h < 1$', 'LineStyle','none')
 fontsize(12,"points")
+
 
