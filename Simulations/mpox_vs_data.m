@@ -113,7 +113,7 @@ legend(legendStr)
 hold on
 
 %plotting data
-scatter(days(T.month_start - T.month_start(1)), table2array(T(:, 'cases')), 'filled') %convert months to days (approx)
+scatter(days(T.month_start - T.month_start(1)), table2array(T(:, 'cases')), 'filled') %convert months to days 
 xticks(days(T.month_start - T.month_start(1)))
 xticklabels(datestr(T.month_start, 'mmm.'))
 xlim([0 200])
@@ -147,6 +147,7 @@ ylim([0 5000])
 xline(91)
 
 fontsize(14, 'points')
+
 
 
 
