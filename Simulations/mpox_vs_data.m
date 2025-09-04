@@ -113,7 +113,9 @@ legend(legendStr)
 hold on
 
 %plotting data
-scatter(30*(0:height(T)-1), table2array(T(:, 'cases')), 'filled') %convert months to days (approx)
+scatter(days(T.month_start - T.month_start(1)), table2array(T(:, 'cases')), 'filled') %convert months to days (approx)
+xticks(days(T.month_start - T.month_start(1)))
+xticklabels(datestr(T.month_start, 'mmm.'))
 xlim([0 200])
 
 hold on
@@ -142,8 +144,9 @@ plot(t, (I_mh+I_m), 'LineWidth', 2)
 ylim([0 5000])
 
 % vax in july 2022
-xline(90)
+xline(91)
 
 fontsize(14, 'points')
+
 
 
